@@ -7,7 +7,7 @@
   "conan": {
     "enabled": true
   },
-  "baseBranches": ["devel"],
+  "baseBranches": ["main"],
   "repositories": [
     "saorio/conan-test"
   ]
