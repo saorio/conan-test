@@ -1,0 +1,20 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: bash
+    secretEnv: ['GITHUB_TOKEN']
+    args:
+      - '-c'
+      - |
+        docker run --network=cloudbuild -e config.model='vertex_ai/codechat-bison' \
+        -e config.fallback_models='vertex_ai/codechat-bison' -e vertexai.vertex_project=$PROJECT_ID \
+        -e GITHUB.USER_TOKEN=$$GITHUB_TOKEN -e config.ai_timeout=300 -e config.verbosity_level=2 \
+        codiumai/pr-agent:latest --pr_url $_HEAD_REPO_URL/pull/$_PR_NUMBER review
+
+availableSecrets:
+  secretManager:
+  - versionName: projects/$PROJECT_ID/secrets/sdps-get-latest-software-version/versions/1
+    env: GITHUB_TOKEN
+timeout: 3600s
+options:
+  logging: CLOUD_LOGGING_ONLY
+  machineType: E2_HIGHCPU_32
