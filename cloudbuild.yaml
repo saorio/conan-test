@@ -12,7 +12,7 @@ steps:
 
 availableSecrets:
   secretManager:
-  - versionName: projects/$PROJECT_ID/secrets/sdps-get-latest-software-version/versions/1
+  - versionName: projects/$PROJECT_ID/secrets/get-latest-software-version/versions/1
     env: GITHUB_TOKEN
 timeout: 3600s
 options:
