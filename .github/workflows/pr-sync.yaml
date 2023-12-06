@@ -14,6 +14,10 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
+      - name: Promotion branch
+        run: |
+          git fetch origin main:main
+          git reset --hard main
       - uses: peter-evans/create-pull-request@v5
         name: Create Pull Request
         with:
