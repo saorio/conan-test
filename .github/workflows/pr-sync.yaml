@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: pull-request
+      - name: pr-sync
         run: |
           gh pr create --title "Update devel branch" --body "This PR updates changes in main branch" --repo ${{ github.repository }} --base devel --head main
         env:
