@@ -18,6 +18,7 @@ jobs:
         with:
           branch: update/devel
           base: devel
+          head: main
           reviewers: saorio
           title: Update devel branch
           delete-branch: true
