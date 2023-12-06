@@ -21,7 +21,7 @@ jobs:
       - uses: peter-evans/create-pull-request@v5
         name: Create Pull Request
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
           branch: update/devel
           reviewers: saorio
           title: Update devel branch
