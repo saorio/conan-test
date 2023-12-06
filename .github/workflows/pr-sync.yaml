@@ -18,7 +18,6 @@ jobs:
         with:
           branch: update/devel
           base: devel
-          reviewers: |
-            @saorio
+          reviewers: saorio
           title: Update devel branch
           delete-branch: true
