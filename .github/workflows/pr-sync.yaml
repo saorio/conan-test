@@ -11,8 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: pr-sync
-        run: |
-          gh pr create --title "Update devel branch" --body "This PR updates changes in main branch" --repo ${{ github.repository }} --base devel --head main
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: main
+      - uses: peter-evans/create-pull-request@v5
+        name: Create Pull Request
+        with:
+          branch: update/devel
+          base: devel
+          reviewers: |
+            @saorio
+          title: Update devel branch
+          delete-branch: true
