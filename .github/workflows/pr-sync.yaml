@@ -14,3 +14,5 @@ jobs:
       - name: pull-request
         run: |
           gh pr create --title "Update devel branch" --body "This PR updates changes in main branch" --repo ${{ github.repository }} --base devel --head main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
