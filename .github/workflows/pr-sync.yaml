@@ -51,8 +51,8 @@ jobs:
           GIT_TAG: ${{needs.create-release.outputs.version}}
         with:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
-          branch: update/${{ env.GIT_TAG }}
-          title: Update devel branch
+          branch: feature/update-devel-branch
+          title: Update devel branch release ${{ env.GIT_TAG }}
           body: |
             This PR updates the devel branch with the latest changes from main.
           delete-branch: true
