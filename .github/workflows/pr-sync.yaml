@@ -34,9 +34,12 @@ jobs:
           name: ${{ steps.extract_version.outputs.version }}
           tag_name: ${{ steps.extract_version.outputs.version }}
   pr-sync:
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'hotfix/')
     needs: create-release
     runs-on: ubuntu-latest
     steps:
+      - env:
+          GIT_TAG: ${{needs.create-release.outputs.version}}
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
