@@ -1,14 +1,14 @@
-{
-  "labels": ["dependencies"],
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base", ":dependencyDashboard"
-  ],
-  "conan": {
-    "enabled": true
-  },
-  "baseBranches": ["main"],
-  "repositories": [
-    "saorio/conan-test"
-  ]
-}
+// {
+//   "labels": ["dependencies"],
+//   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+//   "extends": [
+//     "config:base", ":dependencyDashboard"
+//   ],
+//   "conan": {
+//     "enabled": true
+//   },
+//   "baseBranches": ["main"],
+//   "repositories": [
+//     "saorio/conan-test"
+//   ]
+// }
