@@ -11,6 +11,8 @@ jobs:
     name: Create release
     if: github.event.pull_request.merged == true && ( startsWith(github.head_ref, 'release/') || startsWith(github.head_ref, 'hotfix/') )
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.extract_version.outputs.version }}
     steps:
       - uses: actions/checkout@v3
         with:
