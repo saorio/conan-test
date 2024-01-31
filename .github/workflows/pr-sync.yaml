@@ -48,7 +48,7 @@ jobs:
         run: |
           git fetch origin main:main
           git reset --hard main
-      - uses: peter-evans/create-pull-request@v5
+      - uses: peter-evans/create-pull-request@v6
         name: Create Pull Request
         env:
           GIT_TAG: ${{needs.create-release.outputs.version}}
